@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thouria Benferhat - Multilingual Author & Educator</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        /* Navigation */
+        nav {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1rem;
+            transition: all 0.3s;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+        }
+
+        nav a:hover {
+            background: rgba(255,255,255,0.2);
+            transform: translateY(-2px);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 6rem 2rem;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            animation: fadeInUp 1s;
+        }
+
+        .hero .subtitle {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            opacity: 0.95;
+        }
+
+        .hero .credentials {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .language-flags {
+            font-size: 2.5rem;
+            margin: 2rem 0;
+            letter-spacing: 1rem;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: #ff6b6b;
+            color: white;
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-size: 1.2rem;
+            font-weight: bold;
+            transition: all 0.3s;
+            margin: 0.5rem;
+        }
+
+        .cta-button:hover {
+            background: #ff5252;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(255,107,107,0.3);
+        }
+
+        /* Section Styles */
+        section {
+            padding: 4rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            text-align: center;
+            color: #667eea;
+        }
+
+        .section-alt {
+            background: #f8f9fa;
+        }
+
+        /* About Section */
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .profile-placeholder {
+            width: 100%;
+            aspect-ratio: 1;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 8rem;
+            color: white;
+        }
+
+        .bio {
+            font-size: 1.2rem;
+            line-height: 1.8;
+        }
+
+        .bio p {
+            margin-bottom: 1.5rem;
+        }
+
+        .highlight {
+            background: linear-gradient(120deg, #ffeaa7 0%, #fdcb6e 100%);
+            padding: 0.2rem 0.5rem;
+            border-radius: 3px;
+            font-weight: bold;
+        }
+
+        /* Books Section */
+        .books-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+
+        .book-card {
+            background: white;
+            border-radius: 15px;
+            padding: 2rem;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            transition: all 0.3s;
+            text-align: center;
+        }
+
+        .book-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+        }
+
+        .book-icon {
+            font-size: 5rem;
+            margin-bottom: 1rem;
+        }
+
+        .book-card h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            color: #667eea;
+        }
+
+        .book-card p {
+            margin-bottom: 1.5rem;
+            color: #666;
+        }
+
+        .book-languages {
+            font-size: 1.5rem;
+            margin: 1rem 0;
+        }
+
+        .amazon-button {
+            display: inline-block;
+            background: #ff9900;
+            color: white;
+            padding: 0.8rem 2rem;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s;
+            margin-top: 1rem;
+        }
+
+        .amazon-button:hover {
+            background: #ff8800;
+            transform: scale(1.05);
+        }
+
+        /* Interactive Storybook Section */
+        .storybook-container {
+            background: white;
+            border-radius: 15px;
+            padding: 2rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            margin-top: 2rem;
+        }
+
+        .storybook-embed {
+            width: 100%;
+            height: 600px;
+            border: none;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        /* Contact Section */
+        .contact-content {
+            text-align: center;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .social-link {
+            display: inline-block;
+            padding: 1rem 2rem;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 10px;
+            font-weight: bold;
+            transition: all 0.3s;
+        }
+
+        .social-link:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(102, 126, 234, 0.3);
+        }
+
+        /* Footer */
+        footer {
+            background: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+            
+            nav ul {
+                gap: 1rem;
+            }
+            
+            .books-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#books">Books</a></li>
+            <li><a href="#storybook">Interactive Story</a></li>
+            <li><a href="#contact">Connect</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <h1>Thouria Benferhat</h1>
+        <div class="subtitle">Multilingual Author & Educator</div>
+        <div class="credentials">M.A. in TESOL, Georgetown University</div>
+        <div class="language-flags">🇲🇦 🇩🇿 🇺🇸 🇱🇧 🇧🇦</div>
+        <p style="font-size: 1.1rem; max-width: 700px; margin: 0 auto 2rem;">
+            Former UN Arabic instructor with 36 years of experience, now crafting multilingual books that bridge cultures and languages for young learners around the world.
+        </p>
+        <a href="#books" class="cta-button">📚 Explore My Books</a>
+        <a href="https://linktr.ee/thouria" target="_blank" class="cta-button">🔗 All Links</a>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <h2>About Thouria</h2>
+        <div class="about-content">
+            <div class="profile-placeholder">
+                📖
+            </div>
+            <div class="bio">
+                <p>
+                    <span class="highlight">Born in Morocco, raised in Algeria and the United States</span>, I've lived the multilingual experience that inspires my work today.
+                </p>
+                <p>
+                    For <span class="highlight">36 years, I taught Arabic at the United Nations</span>, helping diplomats and international professionals connect across languages and cultures. This experience showed me the transformative power of language learning and cultural understanding.
+                </p>
+                <p>
+                    Now, I channel that passion into creating <span class="highlight">multilingual children's books</span> that make language learning natural, fun, and accessible. My books feature stories in Arabic, English, French, Spanish, and Bosnian—reflecting the beautiful diversity of our world.
+                </p>
+                <p>
+                    I also teach online, continuing my mission to build bridges between cultures through language education. Every book I write is an invitation for children to see themselves in multiple languages and cultures.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Books Section -->
+    <section id="books" class="section-alt">
+        <h2>Multilingual Books</h2>
+        <p style="text-align: center; font-size: 1.2rem; margin-bottom: 3rem; color: #666;">
+            Stories that celebrate languages, cultures, and curious minds
+        </p>
+        
+        <div class="books-grid">
+            <div class="book-card">
+                <div class="book-icon">📚</div>
+                <h3>Elyas and Sufyan: Polyglots</h3>
+                <div class="book-languages">🇸🇦 🇺🇸 🇫🇷 🇪🇸 🇧🇦</div>
+                <p>
+                    Join two brothers on their multilingual adventures around the world! From New York to Morocco, Montenegro to Sudan, this interactive workbook encourages children to practice five languages while exploring different cultures.
+                </p>
+                <p><strong>Perfect for:</strong> Ages 5-10 | Language learners | Multicultural families</p>
+                <a href="https://a.co/d/6FzHgfr" target="_blank" class="amazon-button">
+                    📖 Get on Amazon
+                </a>
+                <br>
+                <a href="#storybook" class="cta-button" style="margin-top: 1rem; background: #667eea;">
+                    ✨ Try Interactive Version
+                </a>
+            </div>
+
+            <div class="book-card">
+                <div class="book-icon">📝</div>
+                <h3>More Books Coming Soon</h3>
+                <p>
+                    I'm currently working on new multilingual adventures and educational resources for young learners. Stay connected to be the first to know about new releases!
+                </p>
+                <a href="https://linktr.ee/thouria" target="_blank" class="cta-button" style="background: #764ba2;">
+                    🔔 Follow for Updates
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Storybook Section -->
+    <section id="storybook">
+        <h2>Experience the Interactive Storybook</h2>
+        <p style="text-align: center; font-size: 1.2rem; margin-bottom: 2rem; color: #666;">
+            Try the animated, multilingual version of "Elyas and Sufyan: Polyglots"
+        </p>
+        <div class="storybook-container">
+            <p style="text-align: center; padding: 3rem; background: #f8f9fa; border-radius: 10px; color: #666;">
+                <strong>📱 Interactive Storybook Coming Soon!</strong><br>
+                The full interactive experience will be embedded here. For now, <a href="https://a.co/d/6FzHgfr" style="color: #667eea; font-weight: bold;">get the book on Amazon</a> to start your multilingual adventure!
+            </p>
+            <!-- The interactive storybook artifact will be embedded here once deployed -->
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section-alt">
+        <h2>Connect With Me</h2>
+        <div class="contact-content">
+            <p style="font-size: 1.2rem; margin-bottom: 2rem;">
+                I'd love to connect with fellow educators, parents, and language enthusiasts! Find me on social media, explore my teaching resources, or reach out to collaborate.
+            </p>
+            <div class="social-links">
+                <a href="https://linktr.ee/thouria" target="_blank" class="social-link">
+                    🔗 All My Links
+                </a>
+                <a href="https://a.co/d/6FzHgfr" target="_blank" class="social-link">
+                    📚 Amazon Author Page
+                </a>
+            </div>
+            <p style="margin-top: 3rem; font-style: italic; color: #666;">
+                "Language is not just words—it's a bridge to understanding, empathy, and connection."
+            </p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Thouria Benferhat | Multilingual Author & Educator</p>
+        <p style="margin-top: 0.5rem; opacity: 0.8;">M.A. in TESOL, Georgetown University | Former UN Arabic Instructor</p>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add active state to navigation
+        window.addEventListener('scroll', () => {
+            const sections = document.querySelectorAll('section');
+            const navLinks = document.querySelectorAll('nav a');
+            
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (scrollY >= sectionTop - 200) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.style.background = '';
+                if (link.getAttribute('href') === `#${current}`) {
+                    link.style.background = 'rgba(255,255,255,0.2)';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
